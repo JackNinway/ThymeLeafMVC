@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>mvc Contact</title>
+</head>
+<body>
+<p th:text = "#{contact.text}"> Info text here.</p><br>
+<p th:text = "${message}"> </p>
+
+<form action="/contact" method="post">
+<!--    <label for="fname">Type something:</label><br>-->
+    <input type="text"  name="fname"><br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
