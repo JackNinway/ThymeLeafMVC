@@ -22,14 +22,14 @@ public class Home {
         return ("contact");
     }
     @PostMapping("/contact")
-    public String contact(@RequestParam String fname){
-        System.out.println("From Controller using @PostMapping");
+    public String contact(@RequestParam String fname, Model model){
+        String message = "Text received in Controller is: "+ fname;
+        model.addAttribute("message", message);
         stringList.add(fname);
         return ("contact");
     }
     @GetMapping("/contactList")
     public String contactList(Model model){
-        String testString = "myTestString from contact Controller";
         model.addAttribute("inputText", stringList);
         return ("contactList") ;
     }
